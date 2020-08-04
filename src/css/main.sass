@@ -1,0 +1,83 @@
+$nav-anim: .5s ease-in-out
+$bg-col: #151422
+$fg-col: #f0f8ff
+$accent: rgb(0, 255, 255)
+
+*, *:before, *:after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  width: 100vw
+  min-height: 100%
+  overflow-x: hidden
+  font-family: sans-serif
+  background: $bg-col
+  color: $fg-col
+
+  & nav
+    display: flex
+    position: sticky
+    top: 0
+    z-index: 100
+    background-color: $bg-col
+    transition: background-color .2s ease-in-out, color .2s ease-in-out
+
+    & .item
+      padding: 1rem
+      cursor: pointer
+      font-size: 1.1rem
+      transition: font-size $nav-anim, padding-top $nav-anim, padding-bottom $nav-anim
+      &:hover
+        position: relative
+        background: rgba($accent, .5)
+        &:after
+          content: ' '
+          height: 2px
+          width: 100%
+          background: $fg-col
+          position: absolute
+          bottom: 0
+          left: 0
+
+      &.logo
+        font-weight: bold
+
+    &.small
+      background-color: rgba($bg-col, .5)
+      color: rgba($fg-col, .5)
+      transition: background-color .2s ease-in-out, color .2s ease-in-out
+      backdrop-filter: blur(5px)
+      & .item
+        padding: .5rem 1rem
+        font-size: .9rem
+
+      &:hover
+        background-color: $bg-col
+        color: $fg-col
+
+  & main
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 100%
+
+    & #text
+      position: relative
+      width: 50%
+      font-size: 1.2rem
+      line-height: 2.5rem
+
+    & #progress
+      height: 3px
+      width: 0
+      position: fixed
+      z-index: 100
+      top: 0
+      left: 0
+      background: rgb(0, 255, 255)
+      align-self: start
+
+    & #spacer
+      height: 100vh

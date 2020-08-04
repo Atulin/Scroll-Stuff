@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "sync": "browser-sync start --server '.' --files '.'"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "sass": "^1.26.10",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "gulp-postcss": "^8.0.0"
+  }
+}
